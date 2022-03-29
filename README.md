@@ -6,6 +6,7 @@ Create a log folder
 ```bash
 mkdir logs
 ```
+Use the script to [connect to VPN](docs/connect_vpn.sh)
 
 ### List of companies
 List of companies for which we are working
