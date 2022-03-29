@@ -1,6 +1,12 @@
 # sense-stock
 This is a project for BDMA 2nd Semester at UPC, Barcelona.
 
+### Setup Instructions
+Create a log folder
+```bash
+mkdir logs
+```
+
 ### List of companies
 List of companies for which we are working
 
