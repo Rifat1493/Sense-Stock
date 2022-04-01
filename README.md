@@ -8,6 +8,16 @@ mkdir logs
 ```
 Use the script to [connect to VPN](docs/connect_vpn.sh)
 
+To run the `fetch_ohlc_data` script on local:
+```bash
+python fetch_ohlc_data
+```
+
+To run the `fetch_ohlc_data` script on UPC-vm server:
+```bash
+python fetch_ohlc_data --prod
+```
+
 ### HDFS
 #### HDFS Config
 Following is the default file and location of the config file. 
