@@ -8,6 +8,11 @@ mkdir logs
 ```
 Use the script to [connect to VPN](docs/connect_vpn.sh)
 
+### HDFS
+#### HDFS Config
+Following is the default file and location of the config file. 
+` ~/.hdfscli.cfg`
+
 ### List of companies
 List of companies for which we are working
 
@@ -30,3 +35,6 @@ List of companies for which we are working
 | NKE   | Nike                   |
 | TSLA  | Tesla                  |
 
+## Resources
+If you want to put files on server using command line from python
+https://stackoverflow.com/questions/26606128/how-to-save-a-file-in-hadoop-with-python

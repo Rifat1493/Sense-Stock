@@ -1,5 +1,5 @@
 
-import nasdaqdatalink
+# import nasdaqdatalink
 import pandas as pd
 import yfinance as yf
 from datetime import datetime
@@ -33,6 +33,7 @@ list_companies = [
     "GOOGL",
 ]
 
+print(f'\nDatetime: {datetime.now()}' )
 for company in list_companies:
     print(f" -- For {company} -- ")
 
@@ -54,7 +55,7 @@ for company in list_companies:
     df_data.to_csv(join(file_dir, f"{todays_date_str}_{company}_stocks.csv"))
 
     print(f"Rows: {len(df_data)}")
-    print(f" === Done  === ")
+    print(f" === Done  === \n")
 
 
 # ---------  code library
