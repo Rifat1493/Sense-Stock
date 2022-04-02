@@ -8,15 +8,27 @@ mkdir logs
 ```
 Use the script to [connect to VPN](docs/connect_vpn.sh)
 
-To run the `fetch_ohlc_data` script on local:
+Create the required directory on Hadoop HDFS
 ```bash
-python fetch_ohlc_data
+hdfs dfs -ls /user/bdm/stock
 ```
 
-To run the `fetch_ohlc_data` script on UPC-vm server:
-```bash
-python fetch_ohlc_data --prod
-```
+### Cronjobs
+For local setup: Cronjob command to run the `fetch_ohlc_data.py` at 5th minute of every hour. It basically executes the
+file `run.sh` which has the full command with arguments.
+
+    5 */1 * * * /home/teemo/MEGA/bdma-semesters/2-semester/sense-stock/run.sh
+
+For upc-vm setup: Cronjob command to run the `fetch_ohlc_data.py` at 5th minute of every hour. It basically executes the
+file `run_server.sh` which has the full command with arguments.
+
+    5 */1 * * * /home/teemo/MEGA/bdma-semesters/2-semester/sense-stock/run_server.sh
+
+#### Once per night, copy files from local directory to HDFS
+For upc-vm setup: Cronjob command to run the `stock_raw_to_hdfs` at 23:00.
+
+    5 */1 * * * /home/teemo/MEGA/bdma-semesters/2-semester/sense-stock/run_persistent_landing.sh
+
 
 ### Instructions to Benchmark different file formats on HDFS
 Usage is explained in the file `stock_test_hdfs_formats.py`. Examples are also given.
