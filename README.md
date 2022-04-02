@@ -22,12 +22,12 @@ file `run.sh` which has the full command with arguments.
 For upc-vm setup: Cronjob command to run the `fetch_ohlc_data.py` at 5th minute of every hour. It basically executes the
 file `run_server.sh` which has the full command with arguments.
 
-    0 23 * * * /home/teemo/MEGA/bdma-semesters/2-semester/sense-stock/run_server.sh
+    5 */1 * * * /home/bdm/sense-stock/run_server.sh
 
 #### Once per night, copy files from local directory to HDFS
 For upc-vm setup: Cronjob command to run the `stock_raw_to_hdfs` at 23:00.
 
-    5 */1 * * * /home/teemo/MEGA/bdma-semesters/2-semester/sense-stock/run_persistent_landing.sh
+    0 23 * * * /home/bdm/sense-stock/run_persistent_landing.sh
 
 
 ### Instructions to Benchmark different file formats on HDFS
