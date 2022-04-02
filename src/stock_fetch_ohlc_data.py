@@ -24,17 +24,17 @@ else:
 todays_date_str = datetime.now().strftime("%Y-%m-%d")
 
 # Check if "stock" folder exists
-if not exists(join(MAIN_DIR, "../stock")):
-    mkdir(join(MAIN_DIR, "../stock"))
+if not exists(join(MAIN_DIR, "stock")):
+    mkdir(join(MAIN_DIR, "stock"))
 
-if not exists(join(MAIN_DIR, "../stock", "ohlc")):
-    mkdir(join(MAIN_DIR, "../stock", "ohlc"))
+if not exists(join(MAIN_DIR, "stock", "ohlc")):
+    mkdir(join(MAIN_DIR, "stock", "ohlc"))
 
-if not exists(join(MAIN_DIR, "../stock", "ohlc", todays_date_str)):
-    mkdir(join(MAIN_DIR, "../stock", "ohlc", todays_date_str))
+if not exists(join(MAIN_DIR, "stock", "ohlc", todays_date_str)):
+    mkdir(join(MAIN_DIR, "stock", "ohlc", todays_date_str))
 
 # Where all the files will be saved
-file_dir = join(MAIN_DIR, "../stock", "ohlc", todays_date_str)
+file_dir = join(MAIN_DIR, "stock", "ohlc", todays_date_str)
 
 start = datetime(2022, 3, 26, 14)
 end = datetime(2022, 3, 28, 15, 30)

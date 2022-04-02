@@ -18,6 +18,12 @@ To run the `fetch_ohlc_data` script on UPC-vm server:
 python fetch_ohlc_data --prod
 ```
 
+### Instructions to Benchmark different file formats on HDFS
+Usage is explained in the file `stock_test_hdfs_formats.py`. Examples are also given.
+
+Example of output:
+![img](docs/benchmark_results.png)
+
 ### HDFS
 #### HDFS Config
 Following is the default file and location of the config file. 

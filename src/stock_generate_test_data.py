@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import yfinance as yf
 from copy import deepcopy
+from tqdm import tqdm
 
 # # Create test data base file, Uncomment the following to run again and create
 # # the temp data again
@@ -19,7 +20,8 @@ next_day_datetime = df.Datetime.apply(lambda x: x + timedelta(days=1) )
 NUM_ITRS = 2
 df_final = pd.DataFrame()
 df_final = deepcopy(df)
-for i in range(NUM_ITRS):
+list_of_dfs = []
+for i in tqdm( range(NUM_ITRS), total=NUM_ITRS ):
 
     next_day_datetime = df.Datetime.apply(lambda x: x + timedelta(days=1))
     df.Datetime = next_day_datetime
