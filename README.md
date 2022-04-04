@@ -28,7 +28,7 @@ file `run_server.sh` which has the full command with arguments.
 For upc-vm setup: Cronjob command to run the `stock_raw_to_hdfs` at 23:00.
 
     0 23 * * * /home/bdm/sense-stock/run_persistent_landing.sh
-CroCronjob command to run the `extract_news.py` at 3 hours interval to extract news from the news api.
+Cronjob command to run the `extract_news.py` at 3 hours interval to extract news from the news api.
 
     0 */3 * * * /usr/bin/python3 /home/bdm/proj/extract_news.py
 
