@@ -65,6 +65,12 @@ List of companies for which we are working
 | NKE   | Nike                   |
 | TSLA  | Tesla                  |
 
+
+### Access UPC virtual machines
+https://virtech.fib.upc.edu/
+user: masterBD11
+pass: learnSQL - team creator link
+
 ## Resources
 If you want to put files on server using command line from python
 https://stackoverflow.com/questions/26606128/how-to-save-a-file-in-hadoop-with-python

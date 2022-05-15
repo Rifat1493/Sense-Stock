@@ -14,6 +14,8 @@ parser.add_argument('--prod', action='store_true',
                     help='Flag that tells whether script is running on dev machine or prod upc-vm server')
 args = parser.parse_args()
 
+print(f"File Run: {datetime.now()}")
+
 # way 1
 if args.prod:
     client = InsecureClient('http://bdm@localhost:9870', user='bdm')
@@ -31,4 +33,4 @@ for file in listdir(data_dir):
     # Writing using the Avro format (If file name on HDFS exists it gives "Connection reset by peer" )
     with open(join(data_dir, file) , 'r') as reader, AvroWriter(client, join(hdfs_save_dir, file) ) as writer:
         writer.write(reader.read())
-
+print(f" --- Done --- ")
