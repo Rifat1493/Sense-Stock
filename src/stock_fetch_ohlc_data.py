@@ -64,9 +64,9 @@ for company in list_companies:
         print(f"Start Datetime: {df_data.index[0]}")
         print(f"Start Datetime: {df_data.index[-1]}")
 
-    df_data = pd.concat( (df_old_data, df_data) )
+        df_data = pd.concat( (df_old_data, df_data) )
 
-    df_data.to_csv(join(file_dir, f"{todays_date_str}_{company}_stocks.csv"))
+        df_data.to_csv(join(file_dir, f"{todays_date_str}_{company}_stocks.csv"))
 
     print(f"Rows: {len(df_data)}")
     print(f" === Done  === \n")

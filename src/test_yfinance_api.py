@@ -10,12 +10,20 @@ OUTPUT_DIR = ""
 
 
 # command get data for "ADBE"
-data = yf.download(tickers="ADBE", period="1h", interval="1m")
+data = yf.download(tickers="GOOGL", period="3h", interval="1m")
 
 # Test Saving data properly
 data.to_csv("temp.csv")
 
 ndata = pd.read_csv("temp.csv", index_col="Datetime")
+
+data2 = yf.download(tickers="GOOGL", period="4h", interval="1m")
+df = pd.concat( (ndata, data2) )
+
+df.to_csv("temp.csv")
+
+df = pd.read_csv("temp.csv", index_col="Datetime")
+
 
 # ---------  code library
 ########################################
