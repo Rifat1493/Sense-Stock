@@ -51,7 +51,7 @@ for company in list_companies:
     print(f" -- For {company} -- ")
 
     if exists( join(file_dir, f"{todays_date_str}_{company}_stocks.csv")):
-        df_old_data = pd.read_csv(join(file_dir, f"{todays_date_str}_{company}_stocks.csv"))
+        df_old_data = pd.read_csv(join(file_dir, f"{todays_date_str}_{company}_stocks.csv"), index_col="Datetime")
     else:
         df_old_data = pd.DataFrame()
 
@@ -71,26 +71,4 @@ for company in list_companies:
     print(f"Rows: {len(df_data)}")
     print(f" === Done  === \n")
 
-
-# ---------  code library
-# command get data for "ADBE"
-# data = yf.download(tickers="ADBE", period="1d", interval="1m")
-
-########################################
-# for testing
-########################################
-
-# Test case where data overlaps in the dfs
-# start = datetime(2022, 3, 29, 14)
-# end = datetime(2022, 3, 29, 15)
-#
-# df1 = yf.download(tickers="ADBE", period='2h', interval="1m")
-# df2 = yf.download(tickers="ADBE", period='1h', interval="1m")
-
-
-# date_str = datetime.now().strftime("%Y-%m-%d")
-
-# print(data)
-
-# data.to_csv(f"/home/teemo/MEGA/bdma-semesters/2-semester/sense-stock/{date_str}_ATVI_stocks.csv")
 
