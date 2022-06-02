@@ -1,6 +1,10 @@
 # sense-stock
 This is a project for BDMA 2nd Semester at UPC, Barcelona.
 
+## Notes
+
+- Saving data from daily CSV to single file on HDFS. File on HDFS has company name.
+
 ### Setup Instructions
 Create a log folder
 ```bash

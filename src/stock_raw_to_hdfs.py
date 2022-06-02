@@ -44,7 +44,7 @@ schema = StructType([
 # Writing using pySpark with parquet format
 for file in listdir(data_dir):
     print(f"Saving file: {file}")
-
+    company = file.split("_")[1]
     # Writing using the Avro format (If file name on HDFS exists it gives "Connection reset by peer" )
     pandasDF = pd.read_csv(join(data_dir, file), parse_dates=["Datetime"])
     pandasDF = pandasDF.rename(columns={"Adj Close": "Adj_Close"})  # Remove spaces from column names
@@ -68,7 +68,7 @@ for file in listdir(data_dir):
     sparkDF = rdd4.toDF(['Datetime', 'Open', 'High', 'Low', 'Close', 'Adj_Close', 'Volume'])
 
     # Write sparkDF to HDFS
-    sparkDF.write.parquet(join(hdfs_save_dir, file))
+    sparkDF.write.mode('append').parquet(join(hdfs_save_dir, company))
 
 print(f" --- Done --- ")
 
