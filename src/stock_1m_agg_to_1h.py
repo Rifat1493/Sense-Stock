@@ -14,6 +14,9 @@ spark = SparkSession.builder \
     .master("local[1]") \
     .getOrCreate()
 
+print(" ------------- Start -------------")
+print(f"File Run: {datetime.now()}")
+
 company = "ADBE"
 
 todays_date_str = datetime.now().strftime("%Y-%m-%d")

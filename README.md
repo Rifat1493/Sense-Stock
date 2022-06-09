@@ -36,6 +36,11 @@ Cronjob command to run the `extract_news.py` at 3 hours interval to extract news
 
     0 */3 * * * /usr/bin/python3 /home/bdm/proj/extract_news.py
 
+#### Note on Writing bash scripts that run the python script
+You need to activate conda environment in the bash script:
+https://stackoverflow.com/questions/55507519/python-activate-conda-env-through-shell-script
+
+
 ### Instructions to Benchmark different file formats on HDFS
 Usage is explained in the file `stock_test_hdfs_formats.py`. Examples are also given.
 
