@@ -43,9 +43,9 @@ for company in list_companies:
     # # # Filter data that is too old for this category of aggregation
     rdd1 = rdd.filter(lambda x: cutoff_date < x[0])
 
-    # # # take Average of all the statistics over 1 hour
+    # # # take Average of all the statistics over 1 day
     #                                                                                  #open, high, low, close, Adj_Close, Volume, 1-for-help-in-avg-later
-    rdd2 = rdd1.map( lambda x: ( datetime(x[0].year, x[0].month, x[0].day, x[0].hour) , (x[1], x[2], x[3], x[4], x[5], x[6], 1) ) )
+    rdd2 = rdd1.map( lambda x: ( datetime(x[0].year, x[0].month, x[0].day ) , (x[1], x[2], x[3], x[4], x[5], x[6], 1) ) )
     # add all
     rdd3 = rdd2.reduceByKey( lambda x, y: ( x[0] + y[0],
                                             x[1] + y[1],

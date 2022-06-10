@@ -39,12 +39,9 @@ file_dir = join(MAIN_DIR, "stock", "ohlc", todays_date_str)
 start = datetime(2022, 3, 26, 14)
 end = datetime(2022, 3, 28, 15, 30)
 
-
-list_companies = [
-    "ATVI",
-    "ADBE",
-    "GOOGL",
-]
+with open("src/list_of_companies.txt", "r") as fh:
+    list_of_companies = fh.readlines()
+list_companies = list( map(lambda x: x.strip(), list_of_companies) )
 
 print(f'\nDatetime: {datetime.now()}' )
 for company in list_companies:

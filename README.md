@@ -17,6 +17,16 @@ Create the required directory on Hadoop HDFS
 hdfs dfs -ls /user/bdm/stock
 ```
 
+#### Input companies
+In src there is a text file `list_of_companies.txt` which contains a list of companies for which
+the program runs. The structure of the file is, one company symbol per line:
+```text
+ATVI
+ADBE
+GOOGL
+```
+If you want to add more companies, just add its symbol in the file on a new line.
+
 ### Cronjobs
 For local setup: Cronjob command to run the `fetch_ohlc_data.py` at 5th minute of every hour. It basically executes the
 file `run.sh` which has the full command with arguments.
