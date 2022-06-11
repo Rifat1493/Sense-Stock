@@ -67,16 +67,17 @@ date_str = datetime.now().strftime("%Y_%m_%d-%H")
 
 date = datetime.strptime(date_str, "%Y_%m_%d-%H")
 
+'''
 folder_name = '2022_04_05/'
 file_name = 'file_03.json'
-
-
-
 '''
+
+
+
 ddate = date_str.split("-")
 folder_name = ddate[0]+'/'
 file_name = 'file_' + ddate[1] + '.json'
-'''
+
 
 
 config = configparser.ConfigParser()
