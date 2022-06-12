@@ -46,6 +46,14 @@ Cronjob command to run the `extract_news.py` at 3 hours interval to extract news
 
     0 */3 * * * /usr/bin/python3 /home/bdm/proj/extract_news.py
 
+Cronjob command to run the `news_saveto_mongodb.py` at 3 hours interval to read the news saved in HDFS and after processing and analysing the sentiment save it to mongodb.
+
+    5 */3 * * * /usr/bin/python3 /home/bdm/tweets/src/news_saveto_mongodb.py
+
+The `kafka_producer.py` and `twitter_saveto_mongodb.py` will be always kept running to read and process stream data.
+
+
+
 #### Note on Writing bash scripts that run the python script
 You need to activate conda environment in the bash script:
 https://stackoverflow.com/questions/55507519/python-activate-conda-env-through-shell-script
@@ -83,6 +91,16 @@ List of companies for which we are working
 | NFLX  | Netflix                |
 | NKE   | Nike                   |
 | TSLA  | Tesla                  |
+
+### Configure Kafka
+Create kafka topic
+
+    /home/bdm/Downloads/kafka/bin/kafka-topics.sh --create --partitions 1 --topic stream-app --bootstrap-server localhost:9092 
+
+Run the kafka server
+
+    bash start_kafka_server.sh
+
 
 
 ### Access UPC virtual machines
