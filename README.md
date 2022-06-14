@@ -39,9 +39,18 @@ file `run_server.sh` which has the full command with arguments.
     5 */1 * * * /home/bdm/sense-stock/run_server.sh
 
 #### Once per night, copy files from local directory to HDFS
-For upc-vm setup: Cronjob command to run the `stock_raw_to_hdfs` at 23:00.
+For upc-vm setup: Cronjob command to run the `src.stock_raw_to_hdfs.py` at 23:00.
 
     0 23 * * * /home/bdm/sense-stock/run_persistent_landing.sh
+
+For upc-vm setup: Cronjob command to run the `src.stock_1m_agg_to_1h.py` at 23:00.
+
+    10 23 * * * /home/bdm/sense-stock/stock_1m_agg_to_1h.bash
+
+For upc-vm setup: Cronjob command to run the `src.stock_1h_agg_to_1d.py` at 23:00.
+
+    20 23 * * * /home/bdm/sense-stock/stock_1h_agg_to_1d.bash
+
 Cronjob command to run the `extract_news.py` at 3 hours interval to extract news from the news api.
 
     0 */3 * * * /usr/bin/python3 /home/bdm/proj/extract_news.py
