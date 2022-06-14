@@ -16,10 +16,10 @@ def get_rule():
         tmp_list = f.readlines()
 
     rule ="("
-    for  i in range(0,2):
+    for  i in range(len(tmp_list)):
         rule = rule+tmp_list[i].strip()+" or "
 
-    rule = rule+tmp_list[2].strip()+")"
+    rule = rule+tmp_list[len(tmp_list)-1].strip()+")"
     
     return rule
 

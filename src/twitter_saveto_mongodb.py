@@ -69,7 +69,7 @@ def getCompany(news: str)-> str:
         tmp_list = f.readlines()
 
     company_list = []
-    for  i in range(0,3):
+    for  i in range(len(tmp_list)):
         company_list.append(tmp_list[i].strip())
 
     for i in company_list:
@@ -132,8 +132,10 @@ if __name__ == "__main__":
     company_tweets = sentiment_tweets.withColumn("company_name", compname(col("processed_text")))
 
     #selection_df=company_tweets.select("*").where("company_name != 'others'")   
+
+    selection_df = company_tweets.filter(company_tweets.company_name != "others")
    
-    selection_df = company_tweets.filter(company_tweets.company_name == "others")
+    #selection_df = company_tweets.filter(company_tweets.company_name == "others")
 
     # selection_df = selection_df.withColumn("data",create_map(
     #     lit("processed_text"),col("processed_text"),
